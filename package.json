@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "release": "standard-version"
+    "release": "standard-version",
+    "commit": "git-cz"
   },
   "dependencies": {
     "commitizen": "^4.2.4",
