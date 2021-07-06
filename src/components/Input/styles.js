@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { theme } from '@gympass/yoga';
 
-export const Container = styled.div`
+export const Container = styled.form`
   fieldset {
     border-color: ${theme.colors.medium};
 
