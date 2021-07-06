@@ -5,8 +5,18 @@ import { Container } from './styles';
 const Input = () => {
   const [value, setValue] = useState('');
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    fetch(`https://api.github.com/users/${value}`)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+
+    setValue('');
+  };
+
   return (
-    <Container>
+    <Container onSubmit={handleSearch}>
       <InputGympass
         label="Search user github"
         value={value}
