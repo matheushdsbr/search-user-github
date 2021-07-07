@@ -1,19 +1,17 @@
 import { ThemeProvider } from '@gympass/yoga';
-import { useState } from 'react';
 import { GlobalStyle } from '../styles/global';
+import { UserDataProvider } from '../providers/userData';
 import Search from '../components/Search';
 import ResultSearch from '../components/ResultSearch';
 
-const Home = () => {
-  const [user, setUser] = useState(undefined);
-
-  return (
-    <ThemeProvider>
-      <GlobalStyle />
-      <Search setUser={setUser} />
-      <ResultSearch user={user} />
-    </ThemeProvider>
-  );
-};
+const Home = () => (
+  <ThemeProvider>
+    <GlobalStyle />
+    <UserDataProvider>
+      <Search />
+      <ResultSearch />
+    </UserDataProvider>
+  </ThemeProvider>
+);
 
 export default Home;
