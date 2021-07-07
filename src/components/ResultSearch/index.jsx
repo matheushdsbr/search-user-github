@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useUserDataContext } from '../../providers/userData';
+import ResultRepos from '../ResultRepos';
 import { UserImage } from './styles';
 
 const ResultSearch = () => {
   const { user } = useUserDataContext();
+  const [change, setChange] = useState(true);
 
   return (
     <div>
@@ -14,6 +17,13 @@ const ResultSearch = () => {
         <p>
           <a href={user.url} target="_blank" rel="noreferrer">Link Repo</a>
         </p>
+
+        <div>
+          <button onClick={() => setChange(true)} type="button">Repos</button>
+          <button onClick={() => setChange(false)} type="button">Stars</button>
+        </div>
+
+        {change ? <ResultRepos /> : <ResultRepos stars />}
       </>
       )}
     </div>
