@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Input } from '@gympass/yoga';
 import { Container } from './styles';
+import { useUserDataContext } from '../../providers/userData';
 
-const Search = ({ setUser }) => {
+const Search = () => {
   const [value, setValue] = useState('');
+  const { setUser } = useUserDataContext();
 
   const handleSearch = (event) => {
     event.preventDefault();
