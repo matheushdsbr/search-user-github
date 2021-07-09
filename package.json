@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@gympass/yoga": "^7.3.2",
+    "@gympass/yoga-icons": "^1.1.2",
     "commitizen": "^4.2.4",
     "next": "11.0.1",
     "react": "17.0.2",
