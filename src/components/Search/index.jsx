@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import { Input } from '@gympass/yoga';
 import { Container } from './styles';
 import { useUserDataContext } from '../../providers/userData';
 
 const Search = () => {
-  const [value, setValue] = useState('');
-  const { setUser } = useUserDataContext();
+  const {
+    value, setValue, setUser, setRepos, setReposStar,
+  } = useUserDataContext();
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -19,7 +19,13 @@ const Search = () => {
         url: data.html_url,
       }));
 
-    setValue('');
+    fetch(`https://api.github.com/users/${value}/repos`)
+      .then((response) => response.json())
+      .then((data) => setRepos(data));
+
+    fetch(`https://api.github.com/users/${value}/starred`)
+      .then((response) => response.json())
+      .then((data) => setReposStar(data));
   };
 
   return (
