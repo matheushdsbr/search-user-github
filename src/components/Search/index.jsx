@@ -31,7 +31,7 @@ const Search = () => {
   return (
     <Container onSubmit={handleSearch}>
       <Input
-        label="Search user github"
+        label="Search GitHub user..."
         value={value}
         full
         onChange={(e) => setValue(e.target.value)}
