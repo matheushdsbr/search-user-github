@@ -9,7 +9,7 @@ const Welcome = () => (
     <Row>
       <Col xxs={12}>
         <Card>
-          <Icon as={Search} stroke="#24292e" width={56} height={56} />
+          <Icon as={Search} stroke="#24292e" width="xxxlarge" height="xxxlarge" />
           <Text.H3>Find developers and their repositories</Text.H3>
           <p>Search the user to view their projects, including their favorite projects</p>
         </Card>
