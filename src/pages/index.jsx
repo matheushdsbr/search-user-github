@@ -1,17 +1,18 @@
 import { ThemeProvider } from '@gympass/yoga';
 import { GlobalStyle } from '../styles/global';
 import { UserDataProvider } from '../providers/userData';
-import Search from '../components/Search';
+import Header from '../components/Header';
 import ResultSearch from '../components/ResultSearch';
+import Welcome from '../components/Welcome';
 
 const Home = () => (
   <ThemeProvider>
     <GlobalStyle />
     <UserDataProvider>
-      <Search />
+      <Header />
       <ResultSearch />
+      <Welcome />
     </UserDataProvider>
   </ThemeProvider>
 );
-
 export default Home;
