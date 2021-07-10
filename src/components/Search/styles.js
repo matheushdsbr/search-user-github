@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '@gympass/yoga';
 
 export const Container = styled.form`
-  padding: 30px;
+  padding: ${theme.spacing.large}px;
 
   fieldset {
     border-color: ${theme.colors.medium};
@@ -11,11 +11,15 @@ export const Container = styled.form`
       border-color: ${theme.colors.clear};
     }
 
-    input:focus {
+    input {
       color: ${theme.colors.clear};
 
-      & ~ label {
+      &:focus {
         color: ${theme.colors.clear};
+
+        & ~ label {
+          color: ${theme.colors.clear};
+        }
       }
     }
 
