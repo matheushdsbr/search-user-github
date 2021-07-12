@@ -82,19 +82,18 @@ const ResultSearch = () => {
 
           <Col xxs={12}>
             <Result>
-              <div>
-                <Button onClick={() => handleActive(true)} type="button" active={active}>
-                  <Icon as={NetworkOn} width="small" height="small" fill="#0366d6" />
-                  Repos
-                </Button>
-                <Button onClick={() => handleActive(false)} type="button" active={!active}>
-                  <Icon as={Star} width="small" height="small" fill="" stroke="#0366d6" />
-                  Stars
-                </Button>
-              </div>
+              <Button onClick={() => handleActive(true)} type="button" active={active}>
+                <Icon as={NetworkOn} width="small" height="small" fill="#0366d6" />
+                Repos
+              </Button>
+              <Button onClick={() => handleActive(false)} type="button" active={!active}>
+                <Icon as={Star} width="small" height="small" fill="" stroke="#0366d6" />
+                Stars
+              </Button>
 
-              {change ? <ResultRepos /> : <ResultRepos stars />}
             </Result>
+
+            {change ? <ResultRepos /> : <ResultRepos stars />}
           </Col>
         </Row>
       </ContainerGympass>
