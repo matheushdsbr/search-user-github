@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '@gympass/yoga';
 
 export const ContentUser = styled.div`
@@ -69,4 +69,51 @@ export const LinkProfile = styled.div`
       }
     }
   }
+`;
+
+export const Result = styled.div`
+  background: red;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const Button = styled.button`
+  border: none;
+  padding-top: ${theme.spacing.xsmall}px;
+  padding-bottom: ${theme.spacing.small}px;
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${theme.spacing.xxxsmall}px;
+
+  ${({ active }) => (active
+    ? css`
+      &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: #0366d6;
+    }
+    ` : css`
+        &:hover {
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: #d1d5da;
+          }
+        }
+    `)
+}
 `;
