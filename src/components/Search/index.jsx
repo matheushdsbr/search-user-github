@@ -17,6 +17,10 @@ const Search = () => {
         bio: data.bio,
         avatar: data.avatar_url,
         url: data.html_url,
+        repos: data.public_repos,
+        location: data.location,
+        followers: data.followers,
+        following: data.following,
       }));
 
     fetch(`https://api.github.com/users/${value}/repos`)
