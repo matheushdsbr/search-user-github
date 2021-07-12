@@ -2,16 +2,24 @@ import { useState } from 'react';
 import {
   Container as ContainerGympass, Row, Col, Card, Text, Icon,
 } from '@gympass/yoga';
-import { MapPin, NetworkOn, FamilyMember } from '@gympass/yoga-icons';
+import {
+  MapPin, NetworkOn, FamilyMember, Star,
+} from '@gympass/yoga-icons';
 import { useUserDataContext } from '../../providers/userData';
 import ResultRepos from '../ResultRepos';
 import {
-  ContentUser, UserImage, Container, UserHeader, UserInfo, LinkProfile,
+  ContentUser, UserImage, Container, UserHeader, UserInfo, LinkProfile, Result, Button,
 } from './styles';
 
 const ResultSearch = () => {
   const { user } = useUserDataContext();
   const [change, setChange] = useState(true);
+  const [active, setActive] = useState(true);
+
+  const handleActive = (state) => {
+    setActive(state);
+    setChange(state);
+  };
 
   return (
     <>
@@ -73,12 +81,20 @@ const ResultSearch = () => {
           </Col>
 
           <Col xxs={12}>
-            <div>
-              <button onClick={() => setChange(true)} type="button">Repos</button>
-              <button onClick={() => setChange(false)} type="button">Stars</button>
-            </div>
+            <Result>
+              <div>
+                <Button onClick={() => handleActive(true)} type="button" active={active}>
+                  <Icon as={NetworkOn} width="small" height="small" fill="#0366d6" />
+                  Repos
+                </Button>
+                <Button onClick={() => handleActive(false)} type="button" active={!active}>
+                  <Icon as={Star} width="small" height="small" fill="" stroke="#0366d6" />
+                  Stars
+                </Button>
+              </div>
 
-            {change ? <ResultRepos /> : <ResultRepos stars />}
+              {change ? <ResultRepos /> : <ResultRepos stars />}
+            </Result>
           </Col>
         </Row>
       </ContainerGympass>
