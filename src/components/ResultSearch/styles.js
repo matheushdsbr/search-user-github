@@ -57,7 +57,7 @@ export const LinkProfile = styled.div`
   text-align: center;
   p {
     a {
-      background: #58a6ff;
+      background: #2ea44f;
       color: ${theme.colors.white};
       text-decoration: none;
       border-radius: ${theme.radii.small}px;
@@ -72,12 +72,8 @@ export const LinkProfile = styled.div`
 `;
 
 export const Result = styled.div`
-  background: red;
-
-  div {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
 `;
 
 export const Button = styled.button`
