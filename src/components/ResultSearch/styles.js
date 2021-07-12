@@ -87,8 +87,17 @@ export const Button = styled.button`
   align-items: center;
   gap: ${theme.spacing.xxxsmall}px;
 
+  span {
+    font-family: Rubik;
+    color: #24292e;
+  }
+
   ${({ active }) => (active
     ? css`
+      span {
+        font-weight: ${theme.fontWeights.medium};
+      }
+
       &::after {
       content: '';
       position: absolute;
