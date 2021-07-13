@@ -4,7 +4,7 @@ import { theme } from '@gympass/yoga';
 export const Container = styled.form`
   padding: ${theme.spacing.large}px;
 
-  fieldset {
+  /* fieldset {
     border-color: ${theme.colors.medium};
 
     &:hover, &:focus-within {
@@ -26,5 +26,5 @@ export const Container = styled.form`
     label {
       color: ${theme.colors.medium};
     }
-  }
+  } */
 `;

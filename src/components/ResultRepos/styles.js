@@ -3,8 +3,8 @@ import { theme } from '@gympass/yoga';
 
 export const Container = styled.div`
   border-bottom: 1px solid #d1d5da;
-  padding-bottom: ${theme.spacing.large}px;
-  padding-top: ${theme.spacing.large}px;
+  padding: ${theme.spacing.large}px;
+  margin-bottom: 30px;
 
   h3 {
     font-size: ${theme.fontSizes.large}px;

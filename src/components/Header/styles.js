@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { theme } from '@gympass/yoga';
 
 export const ContainerHeader = styled.header`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 16px;
-  background-color: #24292e;
-  flex-direction: column;
 
   div {
     display: flex;
@@ -13,7 +13,7 @@ export const ContainerHeader = styled.header`
 
     svg {
       width: 32px;
-      fill: white;
+      fill: ${theme.colors.stamina};
     }
   }
 `;

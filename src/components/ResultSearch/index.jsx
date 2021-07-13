@@ -8,7 +8,8 @@ import {
 import { useUserDataContext } from '../../providers/userData';
 import ResultRepos from '../ResultRepos';
 import {
-  ContentUser, UserImage, Container, UserHeader, UserInfo, LinkProfile, Result, Button,
+  ContentUser,
+  UserImage, Container, UserHeader, UserInfo, LinkProfile, ResultContainer, Result, Button,
 } from './styles';
 
 const ResultSearch = () => {
@@ -26,7 +27,7 @@ const ResultSearch = () => {
       {user !== undefined && (
       <ContainerGympass>
         <Row>
-          <Col xxs={12}>
+          <Col xxs={12} md={10} md-start={2} xl={6} xl-start={4}>
             <Card>
               <ContentUser>
                 <div>
@@ -80,20 +81,22 @@ const ResultSearch = () => {
             </Card>
           </Col>
 
-          <Col xxs={12}>
-            <Result>
-              <Button onClick={() => handleActive(true)} type="button" active={active}>
-                <Icon as={NetworkOn} width="small" height="small" fill="#0366d6" />
-                <span>Repos</span>
-              </Button>
-              <Button onClick={() => handleActive(false)} type="button" active={!active}>
-                <Icon as={Star} width="small" height="small" fill="" stroke="#0366d6" />
-                <span>Stars</span>
-              </Button>
+          <Col xxs={12} md={10} md-start={2} xl={6} xl-start={4}>
+            <ResultContainer>
+              <Result>
+                <Button onClick={() => handleActive(true)} type="button" active={active}>
+                  <Icon as={NetworkOn} width="small" height="small" fill="#2ea44f" />
+                  <span>Repos</span>
+                </Button>
+                <Button onClick={() => handleActive(false)} type="button" active={!active}>
+                  <Icon as={Star} width="small" height="small" fill="" stroke="#2ea44f" />
+                  <span>Stars</span>
+                </Button>
 
-            </Result>
+              </Result>
 
-            {change ? <ResultRepos /> : <ResultRepos stars />}
+              {change ? <ResultRepos /> : <ResultRepos stars />}
+            </ResultContainer>
           </Col>
         </Row>
       </ContainerGympass>

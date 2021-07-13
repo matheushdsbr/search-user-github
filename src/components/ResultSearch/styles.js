@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { media } from '@gympass/yoga-helpers';
 import { theme } from '@gympass/yoga';
 
 export const ContentUser = styled.div`
@@ -18,23 +19,47 @@ export const ContentUser = styled.div`
       }
     }
   }
+
+  ${media.md`
+    gap: ${theme.spacing.xxlarge}px;
+  `}
 `;
 
 export const UserImage = styled.img`
   width: 125px;
   border-radius: 50%;
+
+  ${media.md`
+    width: 280px;
+  `}
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.small}px;
+
+  ${media.md`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  `}
 `;
 
 export const UserHeader = styled.header`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.xxxsmall}px;
+
+  ${media.md`
+    p {
+      font-size: ${theme.fontSizes.xxlarge}px;
+    }
+
+    span {
+      font-size: ${theme.fontSizes.medium}px;
+    }
+  `}
 `;
 
 export const UserInfo = styled.div`
@@ -48,13 +73,21 @@ export const UserInfo = styled.div`
       align-items: center;
       gap: ${theme.spacing.xxxsmall}px;
     }
+
   }
+
+  ${media.md`
+    ul {
+      gap: ${theme.spacing.xsmall}px;
+    }
+  `}
 `;
 
 export const LinkProfile = styled.div`
   padding-top: ${theme.spacing.xsmall}px;
   padding-bottom: ${theme.spacing.xsmall}px;
   text-align: center;
+
   p {
     a {
       background: #2ea44f;
@@ -71,12 +104,18 @@ export const LinkProfile = styled.div`
   }
 `;
 
+export const ResultContainer = styled.div`
+  margin-top: 30px;
+  box-shadow: 0px 6px 8px 0px rgb(0 0 0 / 45%);
+`;
+
 export const Result = styled.div`
   display: flex;
   justify-content: center;
 `;
 
 export const Button = styled.button`
+  background: #24292e;
   border: none;
   padding-top: ${theme.spacing.xsmall}px;
   padding-bottom: ${theme.spacing.small}px;
@@ -89,8 +128,22 @@ export const Button = styled.button`
 
   span {
     font-family: Rubik;
-    color: #24292e;
+    color: ${theme.colors.clear};
   }
+
+  &:first-child {
+    border-radius: 8px 0 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 8px 0 0;
+  }
+
+  ${media.md`
+    font-size: ${theme.fontSizes.medium}px;
+    padding-top: ${theme.spacing.medium}px;
+    padding-bottom: ${theme.spacing.medium}px;
+  `}
 
   ${({ active }) => (active
     ? css`
@@ -105,7 +158,11 @@ export const Button = styled.button`
       bottom: 0;
       width: 100%;
       height: 4px;
-      background: #0366d6;
+      background: #2ea44f;
+
+      ${media.md`
+        height: 6px;
+      `}
     }
     ` : css`
         &:hover {
@@ -117,6 +174,10 @@ export const Button = styled.button`
             width: 100%;
             height: 4px;
             background: #d1d5da;
+
+            ${media.md`
+              height: 6px;
+            `}
           }
         }
     `)
