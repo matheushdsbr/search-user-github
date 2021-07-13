@@ -11,14 +11,21 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@gympass/yoga": "^7.3.2",
+    "@gympass/yoga-helpers": "^1.0.0",
+    "@gympass/yoga-icons": "^1.1.2",
+    "axios": "^0.21.1",
     "commitizen": "^4.2.4",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.0",
+    "styled-reset": "^4.3.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "babel-plugin-styled-components": "^1.13.1",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -40,6 +47,6 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-     }
+    }
   }
 }

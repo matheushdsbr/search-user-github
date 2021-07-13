@@ -24,6 +24,8 @@
     "react/prop-types": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "@next/next/no-title-in-document-head": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }
