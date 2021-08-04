@@ -1,6 +1,4 @@
-# Search User GitHub <img src="https://img.shields.io/static/v1?label=ReactJS&message=Next.JS&color=61dafb&style=for-the-badge&logo=ghost" height="25"/>
-
-
+# Search User GitHub [![Generic badge](https://img.shields.io/badge/React-Typescript-<COLOR>.svg)](https://shields.io/)
 Neste projeto você pode pesquisar usuários do github e visualizar seus repositórios, inclusive seus repositórios favoritos.
 
 É um SSR, e para desenvolve-lo utilizei:
@@ -12,15 +10,15 @@ Neste projeto você pode pesquisar usuários do github e visualizar seus reposit
 ## Uso
 Para ligar o servidor:
 
-- `yarn dev`
+`yarn dev`
 
 Para fazer o build:
 
-- `yarn build`
+`yarn build`
 
 Para commitar:
 
-- `yarn commit`
+`yarn commit`
 
 ## Desenvolvedor
 <table>
